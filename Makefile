@@ -11,6 +11,8 @@ start:
 		--external react-dom \
 		--transform babelify \
 		--transform envify \
+		# FIXME: it doesn't work with external deps
+		# --plugin livereactload
 		--debug --verbose \
 		--outfile app/dist/bundle.js &
 	exec http-server -p 3000 app
