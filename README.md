@@ -12,4 +12,5 @@ Because I can.
    * Material design
    * CSS Modules
    * As much stateless components as possible
+   * http://ogp.me/
  ...
