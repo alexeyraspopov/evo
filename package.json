@@ -26,7 +26,7 @@
     "browserify": "~11.2.0",
     "envify": "~3.4.0",
     "http-server": "~0.8.5",
-    "livereactload": "~2.0.0",
+    "livereactload": "~2.0.1",
     "watchify": "~3.4.0"
   }
 }
