@@ -27,4 +27,4 @@ build/Release
 node_modules
 
 # App build files
-app/dist
+dist
