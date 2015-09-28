@@ -1,10 +1,10 @@
 export PATH:=$(shell pwd)/node_modules/.bin:$(PATH)
 
 start:
-	rm -rf app/dist
-	mkdir app/dist
+	rm -rf dist
+	mkdir dist
 
-	exec browserify -r react -r react-dom -o app/dist/vendor.js
+	exec browserify -r react -r react-dom -o dist/vendor.js
 
 	@NODE_ENV="development" NODE_PATH="node_modules:app" \
 	exec watchify \
@@ -12,9 +12,12 @@ start:
 		-x react -x react-dom \
 		-p livereactload \
 		-t babelify \
-		-dv -o app/dist/bundle.js &
+		-dv -o dist/bundle.js &
 
 	exec http-server -p 3000 app
 
+start-server:
+	exec nodemon --exec babel-node -- index.js
+
 clean:
-	rm -rf app/dist
+	rm -rf dist
