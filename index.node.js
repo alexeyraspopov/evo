@@ -3,6 +3,8 @@ import React from 'react';
 import App from './app/components/App';
 
 const PORT = 3000;
+const VENDOR = 'vendor.js'; // or vendor.f43ed.js
+const BUNDLE = 'bundle.js'; // or bundle.83bc1.js
 const app = Express();
 
 app.use(Express.static('./dist'));
@@ -17,8 +19,8 @@ app.get('/', (request, response) => {
 </head>
 <body>
 	<main>${React.renderToString(<App />)}</main>
-	<script src="vendor.js"></script>
-	<script src="bundle.js"></script>
+	<script src="${VENDOR}"></script>
+	<script src="${BUNDLE}"></script>
 </body>
 </html>
 	`);

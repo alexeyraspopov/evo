@@ -10,7 +10,7 @@ Because I can.
    * Hot module replacement
  * Client
    * Material design
-   * CSS Modules
+   * CSS Modules (parcelify, css-modules, should be hot-reloaded)
    * As much stateless components as possible
    * http://ogp.me/
  ...
