@@ -2,6 +2,7 @@ import Express from 'express';
 import React from 'react';
 import App from './app/components/App';
 
+// TODO: all env variables should be determined in Makefile
 const PORT = 3000;
 const VENDOR = 'vendor.js'; // or vendor.f43ed.js
 const BUNDLE = 'bundle.js'; // or bundle.83bc1.js
