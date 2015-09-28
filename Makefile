@@ -17,8 +17,5 @@ start:
 	@NODE_ENV="development" NODE_PATH="node_modules:app" \
 	exec nodemon --exec babel-node -- index.js
 
-start-server:
-
-
 clean:
 	rm -rf dist
