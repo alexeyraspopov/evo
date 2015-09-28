@@ -8,14 +8,14 @@ start:
 
 	@NODE_ENV="development" NODE_PATH="node_modules:app" \
 	exec watchify \
-		-e app/index.js \
+		-e app/index.web.js \
 		-x react -x react-dom \
 		-p livereactload \
 		-t babelify \
 		-dv -o dist/bundle.js &
 
 	@NODE_ENV="development" NODE_PATH="node_modules:app" \
-	exec nodemon --exec babel-node -- index.js
+	exec nodemon --exec babel-node -- index.node.js
 
 clean:
 	rm -rf dist
