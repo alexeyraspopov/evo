@@ -8,6 +8,9 @@ const VENDOR = 'vendor.js'; // or vendor.f43ed.js
 const BUNDLE = 'bundle.js'; // or bundle.83bc1.js
 const app = Express();
 
+const styles = [];
+const scripts = [VENDOR, BUNDLE];
+
 app.use(Express.static('./dist'));
 
 app.get('/', (request, response) => {
@@ -17,11 +20,11 @@ app.get('/', (request, response) => {
 <head>
 	<meta charset="utf-8">
 	<title>Evo</title>
+	${styles.map(href => `<link rel="stylesheet" href="${href}">`).join('')}
 </head>
 <body>
 	<main>${React.renderToString(<App />)}</main>
-	<script src="${VENDOR}"></script>
-	<script src="${BUNDLE}"></script>
+	${scripts.map(src => `<script src="${src}"></script>`).join('')}
 </body>
 </html>
 	`);
