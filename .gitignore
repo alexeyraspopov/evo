@@ -28,3 +28,4 @@ node_modules
 
 # App build files
 dist
+bundle
