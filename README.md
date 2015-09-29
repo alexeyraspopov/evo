@@ -8,6 +8,7 @@ Because I can.
    * Tests
    * Coverage
    * Hot module replacement
+   * Isolated modules environment
  * Client
    * Material design
    * CSS Modules (parcelify, css-modules, should be hot-reloaded)
