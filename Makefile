@@ -1,7 +1,6 @@
 export PATH:=$(shell pwd)/node_modules/.bin:$(PATH)
 
-start:
-	rm -rf dist
+start: clean
 	mkdir dist
 
 	exec browserify -r react -r react-dom -o dist/vendor.js
