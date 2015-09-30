@@ -13,6 +13,8 @@ const scripts = [VENDOR, BUNDLE];
 
 app.use(Express.static('./dist'));
 
+console.log(process.env.NODE_ENV);
+
 app.get('/', (request, response) => {
 	response.send(`
 <!doctype html>
