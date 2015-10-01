@@ -3,9 +3,8 @@
 export PATH:=$(shell pwd)/node_modules/.bin:$(PATH)
 export NODE_PATH:=node_modules:app
 
+start: export NODE_ENV=development
 start: clean
-	# FIXME: can't use it now
-	export NODE_ENV=development
 
 	mkdir dist
 
@@ -20,16 +19,15 @@ start: clean
 
 	exec nodemon --exec babel-node -- index.node.js
 
+test: export NODE_ENV=development
 test: lint
-	export NODE_ENV=development
-
 	# TBD
 
 lint:
 	# TBD
 
+bundle: export NODE_ENV=production
 bundle: clean test
-	export NODE_ENV=production
 
 	mkdir bundle
 
