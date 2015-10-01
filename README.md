@@ -2,6 +2,13 @@
 
 Because I can.
 
+## Install
+
+	git clone git@github.com:alexeyraspopov/evo.git
+	cd evo
+	npm install
+	make start
+
 ## Goals
 
  * Infrastructure
