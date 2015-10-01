@@ -3,6 +3,7 @@ import React from 'react';
 import App from './app/components/App';
 import Params from './params.node';
 
+const PORT = process.env.PORT || 3000;
 const app = Express();
 
 app.use(Express.static('./dist'));
@@ -24,4 +25,4 @@ app.get('/', (request, response) => {
 	`);
 });
 
-app.listen(Params.port);
+app.listen(PORT);
