@@ -5,7 +5,6 @@ export NODE_PATH:=node_modules:app
 
 start: export NODE_ENV=development
 start: clean
-
 	mkdir dist
 
 	exec browserify -r react -r react-dom -o dist/vendor.js
@@ -28,7 +27,6 @@ lint:
 
 bundle: export NODE_ENV=production
 bundle: clean test
-
 	mkdir bundle
 
 	exec browserify -r react -r react-dom -o bundle/vendor.js
