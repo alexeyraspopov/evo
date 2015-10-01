@@ -33,7 +33,9 @@ bundle: clean test
 
 	exec browserify -r react -r react-dom -o bundle/vendor.js
 	exec browserify -e app/index.web.js -x react -x react-dom -t babelify -o bundle/bundle.js
-	exec browserify -e index.node.js -t babelify --bare -o bundle/server.js
+	exec browserify -e index.node.js -x ./params.node.json -t babelify --bare -o bundle/server.js
+	# TODO: params should be generated
+	cp ./params.node.json bundle/params.node.json
 
 clean:
 	rm -rf dist bundle
