@@ -20,7 +20,15 @@ start: clean
 
 	exec nodemon --exec babel-node -- index.node.js
 
-bundle: clean
+test: lint
+	export NODE_ENV=development
+
+	# TBD
+
+lint:
+	# TBD
+
+bundle: clean test
 	export NODE_ENV=production
 
 	mkdir bundle
