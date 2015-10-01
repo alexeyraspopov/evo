@@ -1,3 +1,5 @@
+.PHONY: start bundle clean
+
 export PATH:=$(shell pwd)/node_modules/.bin:$(PATH)
 export NODE_PATH:=node_modules:app
 
