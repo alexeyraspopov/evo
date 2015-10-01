@@ -1,4 +1,4 @@
-.PHONY: start bundle clean
+.PHONY: start test lint bundle clean
 
 export PATH:=$(shell pwd)/node_modules/.bin:$(PATH)
 export NODE_PATH:=node_modules:app
