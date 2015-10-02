@@ -1,4 +1,5 @@
 import Express from 'express';
+import Morgan from 'Morgan'
 import React from 'react';
 import App from './app/components/App';
 import Params from './params.node';
@@ -24,5 +25,7 @@ app.get('/', (request, response) => {
 </html>
 	`);
 });
+
+app.use(Morgan('dev'));
 
 app.listen(PORT);
