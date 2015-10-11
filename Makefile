@@ -1,4 +1,4 @@
-.PHONY: start test lint bundle clean
+.PHONY: start test lint bundle clean check-updates
 
 export PATH:=$(shell pwd)/node_modules/.bin:$(PATH)
 export NODE_PATH:=node_modules:app
@@ -34,3 +34,6 @@ bundle: clean test
 
 clean:
 	rm -rf dist bundle
+
+check-updates:
+	exec ncu
