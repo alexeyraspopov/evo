@@ -20,8 +20,8 @@
   "dependencies": {
     "express": "~4.13.3",
     "morgan": "~1.6.1",
-    "react": "~0.14.0-rc1",
-    "react-dom": "~0.14.0-rc1"
+    "react": "~0.14.0",
+    "react-dom": "~0.14.0"
   },
   "devDependencies": {
     "babel": "~5.8.23",
@@ -29,7 +29,7 @@
     "browserify": "~11.2.0",
     "livereactload": "~2.0.1",
     "nodemon": "~1.7.1",
-    "npm-check-updates": "~2.3.0",
+    "npm-check-updates": "~2.3.2",
     "watchify": "~3.4.0"
   }
 }
