@@ -2,30 +2,15 @@ import Express from 'express';
 import Morgan from 'Morgan';
 import React from 'react';
 import App from './app/components/App';
-import Params from './params.node';
+import {styles, scripts} from './params.node';
+import Layout from './layout';
 
 const PORT = process.env.PORT || 3000;
 const app = Express();
 
 app.use(Express.static('./dist'));
-
-app.get('/', (request, response) => {
-	response.send(`
-<!doctype html>
-<html lang="en-us">
-<head>
-	<meta charset="utf-8">
-	<title>Evo</title>
-	${Params.styles.map(href => `<link rel="stylesheet" href="${href}">`).join('')}
-</head>
-<body>
-	<main>${React.renderToString(<App />)}</main>
-	${Params.scripts.map(src => `<script src="${src}"></script>`).join('')}
-</body>
-</html>
-	`);
-});
-
 app.use(Morgan('dev'));
+
+app.get('/', (request, response) => response.send(Layout('Evo', styles, scripts, React.renderToString(<App />))));
 
 app.listen(PORT);
