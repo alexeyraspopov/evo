@@ -15,7 +15,7 @@ app.get('/', (request, response) => {
 <html lang="en-us">
 <head>
 	<meta charset="utf-8">
-	<title>${Params.title}</title>
+	<title>Evo</title>
 	${Params.styles.map(href => `<link rel="stylesheet" href="${href}">`).join('')}
 </head>
 <body>

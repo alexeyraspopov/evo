@@ -1,5 +1,4 @@
 {
-	"title": "Evo",
 	"scripts": [
 		"vendor.js",
 		"bundle.js"
