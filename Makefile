@@ -28,7 +28,7 @@ bundle: clean test
 
 	exec browserify $(INCLUDE_VENDOR) -t envify -o bundle/vendor.js
 	exec browserify $(WEB_ENTRY) -o bundle/bundle.js
-	exec browserify -e index.node.js -x ./params.node.json -t babelify -t envify --bare -o bundle/server.js
+	exec browserify -e index.node.js -x ./params.node.json -t babelify -g envify --bare -o bundle/server.js
 	# TODO: params should be generated
 	cp ./params.node.json bundle/params.node.json
 
