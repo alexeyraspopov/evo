@@ -20,7 +20,7 @@ test: lint
 	# TBD
 
 lint:
-	# TBD
+	exec eslint -c .eslintrc ./
 
 bundle: export NODE_ENV=production
 bundle: clean test
