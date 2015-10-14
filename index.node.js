@@ -1,5 +1,5 @@
 import Express from 'express';
-import Morgan from 'Morgan'
+import Morgan from 'Morgan';
 import React from 'react';
 import App from './app/components/App';
 import Params from './params.node';
