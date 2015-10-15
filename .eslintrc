@@ -2,6 +2,7 @@
 	"parser": "babel-eslint",
 	"extends": "airbnb",
 	"rules": {
+		"no-use-before-define": [2, "nofunc"],
 		"indent": [2, "tab"],
 		"new-cap": 0
 	}
