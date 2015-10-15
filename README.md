@@ -14,6 +14,7 @@ Because I can.
  * Infrastructure
    * Tests
    * Coverage
+   * Code style
    * Hot module replacement
    * Isolated modules environment
  * Client
