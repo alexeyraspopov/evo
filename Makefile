@@ -8,12 +8,14 @@ EXCLUDE_VENDOR=-x react -x react-dom
 WEB_ENTRY=-e app/index.web.js $(EXCLUDE_VENDOR) -t babelify -g envify
 
 start: export NODE_ENV=development
+start: export STATIC=dist
+start: export PORT=3000
 start: clean
 	mkdir dist
 
 	exec browserify $(INCLUDE_VENDOR) -t envify -o dist/vendor.js
 	exec watchify $(WEB_ENTRY) -p livereactload -dv -o dist/bundle.js &
-	exec nodemon --exec babel-node -- index.node.js
+	exec nodemon --exec babel-node -- server/index.node.js
 
 test: export NODE_ENV=development
 test: lint
@@ -23,14 +25,16 @@ lint:
 	exec eslint -c .eslintrc ./
 
 bundle: export NODE_ENV=production
+bundle: export STATIC=.
+bundle: export PORT=80
 bundle: clean test
 	mkdir bundle
 
-	exec browserify $(INCLUDE_VENDOR) -g envify -o bundle/vendor.js
-	exec browserify $(WEB_ENTRY) -o bundle/bundle.js
-	exec browserify -e index.node.js -x ./params.node.json -t babelify -g envify --bare -o bundle/server.js
+	exec browserify $(INCLUDE_VENDOR) -g envify | exec uglifyjs --compress > bundle/vendor.js
+	exec browserify $(WEB_ENTRY) | exec uglifyjs --compress > bundle/bundle.js
+	exec browserify -e server/index.node.js -x server/params.node.json -t babelify -g envify --bare | exec uglifyjs --compress > bundle/server.js
 	# TODO: params should be generated
-	cp ./params.node.json bundle/params.node.json
+	cp server/params.node.json bundle/params.node.json
 
 clean:
 	rm -rf dist bundle

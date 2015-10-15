@@ -34,6 +34,7 @@
     "livereactload": "~2.0.1",
     "nodemon": "~1.7.1",
     "npm-check-updates": "~2.3.2",
+    "uglify-js": "~2.5.0",
     "watchify": "~3.4.0"
   }
 }
