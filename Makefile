@@ -5,7 +5,8 @@ export NODE_PATH:=node_modules:app
 
 INCLUDE_VENDOR=-r react -r react-dom
 EXCLUDE_VENDOR=-x react -x react-dom
-WEB_ENTRY=-e app/index.web.js $(EXCLUDE_VENDOR) -t babelify -g envify
+TRANSFORMERS=-t babelify -g envify
+WEB_ENTRY=-e app/index.web.js $(EXCLUDE_VENDOR) $(TRANSFORMERS)
 
 start: export NODE_ENV=development
 start: export STATIC=dist
@@ -32,7 +33,7 @@ bundle: clean test
 
 	exec browserify $(INCLUDE_VENDOR) -g envify | exec uglifyjs --compress > bundle/vendor.js
 	exec browserify $(WEB_ENTRY) | exec uglifyjs --compress > bundle/bundle.js
-	exec browserify -e server/index.node.js -x server/params.node.json -t babelify -g envify --bare | exec uglifyjs --compress > bundle/server.js
+	exec browserify -e server/index.node.js -x server/params.node.json $(TRANSFORMERS) --bare | exec uglifyjs --compress > bundle/server.js
 	# TODO: params should be generated
 	cp server/params.node.json bundle/params.node.json
 
