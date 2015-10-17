@@ -12,7 +12,7 @@ const app = Express();
 app.use(Morgan('common'));
 app.use(Express.static(STATIC));
 
-app.get('/', (request, response) => response.send(Layout('Evo', styles, scripts, React.renderToString(<App />))));
+app.get('/*', (request, response) => response.send(Layout('Evo', styles, scripts, React.renderToString(<App />))));
 
 app.listen(PORT);
 
