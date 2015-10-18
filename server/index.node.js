@@ -1,6 +1,7 @@
 import Express from 'express';
 import Morgan from 'Morgan';
 import React from 'react';
+import ReactDOMServer from 'react-dom/server';
 import App from '../app/components/App';
 import {styles, scripts} from './params.node';
 import Layout from './layout';
@@ -12,7 +13,7 @@ const app = Express();
 app.use(Morgan('common'));
 app.use(Express.static(STATIC));
 
-app.get('/*', (request, response) => response.send(Layout('Evo', styles, scripts, React.renderToString(<App />))));
+app.get('/*', (request, response) => response.send(Layout('Evo', styles, scripts, ReactDOMServer.renderToString(<App path={request.url}/>))));
 
 app.listen(PORT);
 
