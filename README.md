@@ -23,3 +23,8 @@ Because I can.
    * As much stateless components as possible
    * http://ogp.me/
  ...
+
+## TODO
+
+ * Babel runtime
+ * CSS modules
