@@ -13,7 +13,10 @@ const app = Express();
 app.use(Morgan('common'));
 app.use(Express.static(STATIC));
 
-app.get('/*', (request, response) => response.send(Layout('Evo', styles, scripts, ReactDOMServer.renderToString(<App path={request.url}/>))));
+app.get('/*', (request, response) => {
+	const markup = ReactDOMServer.renderToString(<App path={request.url} />);
+	return response.send(Layout('Evo', styles, scripts, markup));
+});
 
 app.listen(PORT);
 
