@@ -14,7 +14,7 @@ start: export PORT=3000
 start: clean
 	mkdir dist
 
-	exec browserify $(INCLUDE_VENDOR) -t envify -o dist/vendor.js
+	exec browserify $(INCLUDE_VENDOR) -g envify -o dist/vendor.js
 	exec watchify $(WEB_ENTRY) -p livereactload -dv -o dist/bundle.js &
 	exec nodemon --exec babel-node -- server/index.node.js
 
