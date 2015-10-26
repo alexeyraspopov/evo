@@ -2,7 +2,7 @@
   "name": "evo",
   "version": "0.0.1",
   "description": "Because I can",
-  "main": "index.node.js",
+  "main": "server/index.node.js",
   "scripts": {
     "test": "make test",
     "start": "make start"
