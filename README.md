@@ -26,5 +26,4 @@ Because I can.
 
 ## TODO
 
- * Babel runtime
  * CSS modules
