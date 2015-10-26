@@ -23,7 +23,3 @@ app.get('/*', (request, response) => {
 });
 
 app.listen(PORT);
-
-function throwError(msg) {
-	throw new Error(msg);
-}
