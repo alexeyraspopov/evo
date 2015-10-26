@@ -19,6 +19,7 @@
   "homepage": "https://github.com/alexeyraspopov/evo#readme",
   "dependencies": {
     "express": "~4.13.3",
+    "invariant": "~2.1.1",
     "morgan": "~1.6.1",
     "react": "~0.14.0",
     "react-dom": "~0.14.0"
@@ -33,7 +34,7 @@
     "eslint": "~1.6.0",
     "eslint-config-airbnb": "~0.1.0",
     "livereactload": "~2.0.1",
-    "nodemon": "~1.7.1",
+    "nodemon": "~1.8.0",
     "npm-check-updates": "~2.3.2",
     "uglify-js": "~2.5.0",
     "watchify": "~3.4.0"
