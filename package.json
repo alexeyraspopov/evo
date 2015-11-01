@@ -21,6 +21,7 @@
     "express": "~4.13.3",
     "invariant": ">1",
     "morgan": "~1.6.1",
+    "normalize.css": "~3.0.3",
     "react": "0.14.x",
     "react-dom": "0.14.x"
   },
