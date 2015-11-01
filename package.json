@@ -34,6 +34,7 @@
     "envify": "~3.4.0",
     "eslint": "~1.7.3",
     "eslint-config-airbnb": "~0.1.0",
+    "eslint-plugin-react": "~3.6.3",
     "livereactload": "~2.0.1",
     "nodemon": "~1.8.0",
     "uglify-js": "~2.5.0",
