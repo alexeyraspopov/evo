@@ -1,5 +1,6 @@
 import postcss from 'postcss';
 import imports from 'postcss-import';
+import cssnano from 'cssnano';
 import autoprefixer from 'autoprefixer';
 import minimist from 'minimist';
 import {createReadStream, createWriteStream} from 'fs';
@@ -9,7 +10,7 @@ import path from 'path';
 const argv = minimist(process.argv.slice(2));
 const entry = path.join(process.cwd(), argv.e);
 const output = path.join(process.cwd(), argv.o);
-const processor = postcss([autoprefixer, imports]);
+const processor = postcss([autoprefixer, imports, cssnano]);
 
 createReadStream(entry)
 	.pipe(map((data, cb) => {
