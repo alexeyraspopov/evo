@@ -17,6 +17,7 @@ start: clean
 	exec browserify $(INCLUDE_VENDOR) -g envify -o dist/vendor.js
 	exec watchify $(WEB_ENTRY) -p livereactload -dv -o dist/bundle.js &
 	exec nodemon --exec babel-node -- server/index.node.js
+	# TODO: add watcher for styles
 
 test: export NODE_ENV=development
 test: lint
