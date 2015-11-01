@@ -35,7 +35,7 @@ bundle: clean test
 	exec browserify $(INCLUDE_VENDOR) -g envify | exec uglifyjs --compress > bundle/vendor.js
 	exec browserify $(WEB_ENTRY) | exec uglifyjs --compress > bundle/bundle.js
 	exec browserify -e server/index.node.js -x server/params.node.json $(TRANSFORMERS) --bare | exec uglifyjs --compress > bundle/server.js
-	exec babel-node -- ./scripts/postcss.js -e app/main.css -o bundle/bundle.css
+	exec postcss --use autoprefixer --use postcss-import --use cssnano -o bundle/bundle.css app/main.css
 	# TODO: params should be generated
 	cp server/params.node.json bundle/params.node.json
 

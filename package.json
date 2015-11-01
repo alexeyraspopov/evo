@@ -38,10 +38,8 @@
     "eslint-config-airbnb": "~0.1.0",
     "eslint-plugin-react": "~3.6.3",
     "livereactload": "~2.0.1",
-    "map-stream": "0.0.6",
-    "minimist": "~1.2.0",
     "nodemon": "~1.8.0",
-    "postcss": "~5.0.10",
+    "postcss-cli": "~2.3.2",
     "postcss-import": "~7.1.0",
     "uglify-js": "~2.5.0",
     "watchify": "~3.6.0"
