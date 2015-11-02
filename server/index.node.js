@@ -3,7 +3,7 @@ import Morgan from 'Morgan';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import invariant from 'invariant';
-import App from '../app/components/App';
+import App from 'components/App';
 import {styles, scripts} from './params.node';
 import Layout from './layout';
 
