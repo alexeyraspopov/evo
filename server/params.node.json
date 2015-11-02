@@ -4,6 +4,6 @@
 		"bundle.js"
 	],
 	"styles": [
-
+		"bundle.css"
 	]
 }
