@@ -16,7 +16,7 @@ start: clean
 
 	exec browserify $(INCLUDE_VENDOR) -g envify -o dist/vendor.js
 	exec watchify $(WEB_ENTRY) -p livereactload -dv -o dist/bundle.js &
-	exec postcss --use autoprefixer --use postcss-import -o dist/bundle.css app/main.css -w &
+	exec postcss --use autoprefixer --use postcss-custom-properties --use postcss-import -o dist/bundle.css app/main.css -w &
 	exec nodemon --exec babel-node -- server/index.node.js
 
 test: export NODE_ENV=development
@@ -35,7 +35,7 @@ bundle: clean test
 	exec browserify $(INCLUDE_VENDOR) -g envify | exec uglifyjs --compress > bundle/vendor.js
 	exec browserify $(WEB_ENTRY) | exec uglifyjs --compress > bundle/bundle.js
 	exec browserify -e server/index.node.js -x server/params.node.json $(TRANSFORMERS) --bare | exec uglifyjs --compress > bundle/server.js
-	exec postcss --use autoprefixer --use postcss-import --use cssnano -o bundle/bundle.css app/main.css
+	exec postcss --use autoprefixer --use postcss-custom-properties --use postcss-import --use cssnano -o bundle/bundle.css app/main.css
 	# TODO: params should be generated
 	cp server/params.node.json bundle/params.node.json
 

@@ -40,6 +40,7 @@
     "livereactload": "~2.0.1",
     "nodemon": "~1.8.0",
     "postcss-cli": "~2.3.2",
+    "postcss-custom-properties": "~5.0.0",
     "postcss-import": "~7.1.0",
     "uglify-js": "~2.5.0",
     "watchify": "~3.6.0"
