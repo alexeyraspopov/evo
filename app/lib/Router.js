@@ -1,6 +1,5 @@
 export function parse(pattern, path) {
 	const keys = pattern.match(/(\:|\*)([^\/\?]+)/g) || [];
-
 	const regex = regexify(pattern);
 
 	if (!regex.test(path)) {
@@ -8,12 +7,17 @@ export function parse(pattern, path) {
 	}
 
 	const results = path.match(regex).slice(1);
-
 	const params = keys
 		.map(key => key.slice(1))
 		.reduce((params, key, index) => ({[key]: results[index], ...params}), {});
 
 	return {params, path};
+}
+
+export function matches(patterns, path) {
+	return Object.keys(patterns)
+		.map(route => ({route, regex: regexify(route), callback: patterns[route]}))
+		.filter(route => route.regex.test(path));
 }
 
 function regexify(pattern) {
