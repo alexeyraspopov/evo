@@ -1,3 +1,7 @@
 @import "normalize.css/normalize";
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic&subset=cyrillic,latin);
+
+body{
+	font-family: "Roboto", "Helvetica", sans-serif;
+}
