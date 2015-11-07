@@ -16,3 +16,7 @@ h2{
 	font-size: 20px;
 	font-weight: normal;
 }
+.action-button{
+	width: 45px;
+	height: 45px;
+}
