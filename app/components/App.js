@@ -9,5 +9,5 @@ export default function App({path}) {
 			<Header />
 			<Greeting name={`Ann ${path}`} />;
 		</div>
-	)
+	);
 }

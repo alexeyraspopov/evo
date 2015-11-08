@@ -9,7 +9,7 @@ export function parse(pattern, path) {
 	const results = path.match(regex).slice(1);
 	const params = keys
 		.map(key => key.slice(1))
-		.reduce((params, key, index) => ({[key]: results[index], ...params}), {});
+		.reduce((acc, key, index) => ({[key]: results[index], ...acc}), {});
 
 	return {params, path};
 }
