@@ -5,7 +5,7 @@ export NODE_PATH:=node_modules:app
 
 INCLUDE_VENDOR=-r react -r react-dom
 EXCLUDE_VENDOR=-x react -x react-dom
-TRANSFORMERS=-g envify -t babelify
+TRANSFORMERS=-g envify -t [ babelify --sourceMapRelative app ]
 WEB_ENTRY=-e app/index.web.js $(EXCLUDE_VENDOR) $(TRANSFORMERS)
 
 start: export NODE_ENV=development
