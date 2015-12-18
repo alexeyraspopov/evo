@@ -1,3 +1,3 @@
 {
-	"optional": ["runtime", "minification.constantFolding"]
+	"optional": ["runtime"]
 }
